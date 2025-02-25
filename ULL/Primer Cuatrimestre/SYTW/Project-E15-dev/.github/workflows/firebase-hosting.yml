@@ -1,0 +1,49 @@
+name: Deploy Vue App to Firebase Hosting
+
+
+on:
+  push:
+    branches:
+      - dev  # Ejecutar cuando haya un push en la rama main
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+
+    steps:
+    # 1. Clonar el repositorio
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+
+    # 2. Configurar Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+
+    # 3. Instalar dependencias del frontend
+    - name: Install dependencies
+      working-directory: ./client   # Apunta a la carpeta client
+      run: npm install
+
+    # 3. Instalar dependencias del frontend
+    - name: Install dependencies main
+      run: npm install
+
+    # 4. Compilar el proyecto Vue
+    - name: Build Vue app
+      working-directory: ./client   # Apunta a la carpeta client
+      run: npm run build
+
+
+    # 5. Desplegar a Firebase Hosting
+    - name: Deploy to Firebase Hosting
+      uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: ${{ secrets.GITHUB_TOKEN }}
+        firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        channelId: live

@@ -1,0 +1,60 @@
+name: Deploy Test Frontend
+
+
+on:
+  push:
+    branches:
+      - dev  # Ejecutar cuando haya un push en la rama dev
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Clonar el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+
+      # 2. Configurar Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+
+      # 3. Instalar dependencias del proyecto raíz
+      - name: Install root dependencies
+        run: npm install
+
+
+      # 4. Instalar dependencias del backend
+      - name: Install backend dependencies
+        working-directory: ./server
+        run: npm install
+
+
+      # 5. Instalar dependencias del frontend
+      - name: Install frontend dependencies
+        working-directory: ./client
+        run: npm install
+
+
+      # 6. Ejecutar front y backend
+      - name: Run tests
+        run: npm run dev &
+        env:
+          ATLAS_URI: mongodb+srv://admin_Atlas:sytw@cluster0.opsd0.mongodb.net/clientStudyProject?retryWrites=true&w=majority
+          SECRET_KEY: sytw
+          TOKEN_EXPIRATION: 30m
+
+
+      # 7. Ejecutar pruebas Cypress
+      - name: Run Cypress tests
+        working-directory: ./client
+        run: npx cypress run
+
+
+
+
+

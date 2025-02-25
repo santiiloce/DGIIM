@@ -1,0 +1,2 @@
+exercism download --track=cpp --exercise=xxxx
+exercism submit ***.cpp
