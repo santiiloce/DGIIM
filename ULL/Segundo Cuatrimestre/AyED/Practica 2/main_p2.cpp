@@ -46,6 +46,20 @@ int main()
   vector_t<double> v, w;
   v.read(), v.write();
   w.read(), w.write();
+
+  std::cout << std::endl;
+  v.write();
+  if(v.is_capicua())
+    std::cout << "Es capicua" << std::endl;
+  else
+    std::cout << "No es capicua" <<std::endl;
+
+  std::cout << std::endl;
+  w.write(); 
+  if(w.is_capicua())
+    std::cout << "Es capicua" << std::endl;
+  else
+    std::cout << "No es capicua" <<std::endl;
   
   cout << "Producto escalar de vector_t<double>: " << scal_prod(v, w) << endl << endl;
   
@@ -60,7 +74,7 @@ int main()
   matrix_t<double> A, B, C;
   A.read(), A.write();
   B.read(), B.write();
-  
+
   C.multiply(A, B);
   cout << "Multiplicación de matrices A y B: " << endl;
   C.write();

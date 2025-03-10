@@ -41,6 +41,7 @@ public:
 
   void write(ostream& = cout) const;
   void read(istream& = cin);
+  bool is_capicua();
 
 private:
   T *v_;
@@ -225,3 +226,21 @@ scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w)
   }
   return result;
 }
+
+// Comprobacion de si un vector es capicua
+template<class T>
+bool vector_t<T>::is_capicua(){
+  T init;
+  T end;
+  bool es_capicua = true;
+  for(size_t i{0}; i < this->get_size() / 2; i++){
+    init = this->at(i);
+    end = this->at(sz_ - 1 - i);
+    if(init != end ){
+      es_capicua = false;
+      break;
+    }
+  }
+  return es_capicua;
+}
+
