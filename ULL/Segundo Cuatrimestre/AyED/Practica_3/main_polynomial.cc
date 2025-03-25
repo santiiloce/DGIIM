@@ -86,10 +86,13 @@ int main()
   cout << "sp1 == p2? " << (sp1.IsEqual(p2) ? "true" : "false") << endl;
   cout << "sp2 == p1? " << (sp2.IsEqual(p1) ? "true" : "false") << endl;
   cout << "sp1 == p3? " << (sp1.IsEqual(p3) ? "true" : "false") << endl;
-  cout << "sp3 == p1? " << (sp3.IsEqual(p1) ? "true" : "false") << endl;
   cout << "sp2 == p3? " << (sp2.IsEqual(p3) ? "true" : "false") << endl;
   cout << "sp3 == p2? " << (sp3.IsEqual(p2) ? "true" : "false") << endl;
   cout << endl;
+
+  cout << "Suma de los grados pares de p1; " << p1.SumOfEvenDegrees() << std::endl;
+  cout << "Suma de los grados pares de p2; " << p2.SumOfEvenDegrees() << std::endl;
+  cout << "Suma de los grados pares de p3; " << p3.SumOfEvenDegrees() << std::endl;
 
   return 0;
 }

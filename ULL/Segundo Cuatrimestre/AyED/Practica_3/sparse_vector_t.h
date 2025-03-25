@@ -54,9 +54,10 @@ class sparse_vector_t {
  private:
   pair_vector_t pv_;  // valores + índices
   int nz_;            // nº de valores distintos de cero = tamaño del vector
+  int n_;             // tamaño del vector original
     
 
-  // bool IsNotZero(const double, const double = EPS) const;
+  bool IsNotZero(const double, const double = EPS) const;
 };
 
 
@@ -68,8 +69,23 @@ sparse_vector_t::sparse_vector_t(const int n) : pv_(n), nz_(0), n_(n) {}
 
 // FASE II
 sparse_vector_t::sparse_vector_t(const vector_t<double>& v, const double eps)
-    : pv_(), nz_(0), n_(0) {
-  
+    : pv_(), nz_(0),n_(0) {
+      n_ = v.get_size();
+      nz_ = 0;
+      for(size_t i = 0; i < n_; i++){
+        if(fabs(v.at(i)) > eps){
+          nz_++;
+        }
+      }
+      pv_.resize(nz_);
+      for(size_t i = 0, p = 0; i < n_; i++){
+        if(fabs(v.at(i)) > eps){
+          int indice = i;
+          pair_double_t aux{v.get_val(i), indice};
+          pv_.at(p) = aux;
+          p++;
+        }
+      }
 }
 
 // constructor de copia
