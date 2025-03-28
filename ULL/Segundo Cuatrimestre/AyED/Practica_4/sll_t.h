@@ -64,8 +64,8 @@ template <class T> bool sll_t<T>::empty(void) const {
 template <class T> void sll_t<T>::push_front(sll_node_t<T>* n) {
   assert(n != NULL);
 
-  n->set_next(head_);
-  head_ = n;
+  n->set_next(head_); // Haces que n apunte a head
+  head_ = n;          // Pones a n como nuevo head
 }
 
 template <class T> sll_node_t<T>* sll_t<T>::pop_front(void) { 

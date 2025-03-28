@@ -32,9 +32,13 @@ int main()
   cout << endl;
 
   // Fase III
+  //std::cout << "FASE III" << std::endl;
   double x1, x2, x3;
+  //std::cout << "1" << std::endl;
   cin >> x1 >> x2 >> x3;
+  //std::cout << "2" << std::endl;
   cout << "sllp1(" << x1 << ")= " << sllp1.Eval(x1) << endl;
+  //std::cout << "3" << std::endl;
   cout << "sllp1(" << x2 << ")= " << sllp1.Eval(x2) << endl;
   cout << "sllp1(" << x3 << ")= " << sllp1.Eval(x3) << endl;
   cout << "sllp2(" << x1 << ")= " << sllp2.Eval(x1) << endl;
