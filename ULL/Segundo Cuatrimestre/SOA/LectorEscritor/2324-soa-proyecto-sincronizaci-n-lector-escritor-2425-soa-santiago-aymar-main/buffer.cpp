@@ -1,6 +1,22 @@
 #include "buffer.h"
 #include <QDebug>
 
+/*
+Notas para consumidor y produector:
+El orden del buffer no tiene porque ser el mismo orden en el que entra. El consumidro recorrer en busca del primer hueco sin consumir
+hasta encontrar una tarea que este disponible. El proceso de consumir ba a ser unicament el momento en el que se saque del buffer, y despues de eso no se puede
+sacar el siguiente.
+
+Notas:
+Tenmos tres lectores y cada uno realiza una tarea, R1 media, R2 mediana y R3 suma. En esta es más dificil de realziar una carga equitativa del trabajo, por ejmplo para la
+moda quizas se requiere mas CPU. Opciones: si dejamos que cada lector vaya asu ritmo tenemos que controlar que cada uno pasa por el huevo del biffee. Para ahcerlo ams sencillo 
+lo que se puede hacer hasta que los tres no terminene con un dato no pasan los tres al siguiente, de esta formaa te aseguraas solucionar el problema con mas control al operar.
+Imaginamos que en cuanto hay un lock for wirte nungun lector puede entrar. Pensemo sque entrar los lectoresm se hace un lock for read, hasta que no esten los tres fuera no se
+puede hacer un lock for write. Se necesitaria realozar un historico de las tareas para evitar realizar varias lectruas iguales porque si no el que vaya mas reapido se vaciar
+comiendo el buffer.
+
+*/
+
 Buffer::Buffer(int maxSize, int totalReaders, int read_writeCount) : maxSize(maxSize), totalReaders(totalReaders),front(0),
     rear(0), activeReaders(0), waitingWriters(0), activeWriters(0), itemsAvailable(0), readersReadCurrent(0),
     maxWrites(read_writeCount), totalWrites(0){
