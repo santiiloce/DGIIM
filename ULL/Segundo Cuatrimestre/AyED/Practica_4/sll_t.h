@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Santiago López Cerro
+// FECHA: 02/04/2025
+// EMAIL: alu0101763613@ull.edu.es
 // VERSION: 3.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 4
@@ -85,10 +85,11 @@ template <class T> void sll_t<T>::insert_after(sll_node_t<T>* prev,
   prev->set_next(n);
 }
 
+// Borra el siguiente dado un nodo
 template <class T> sll_node_t<T>* sll_t<T>::erase_after(sll_node_t<T>* prev) { 
   assert(!empty());
   assert(prev != NULL);
-  sll_node_t<T>* aux = prev->get_next();
+  sll_node_t<T>* aux = prev->get_next();  // Miro a donde apunta el siguiente de prev
   
   assert(aux != NULL);
   prev->set_next(aux->get_next());

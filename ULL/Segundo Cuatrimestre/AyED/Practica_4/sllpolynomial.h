@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Santiago López Cerro
+// FECHA: 02/04/2025
+// EMAIL: alu0101763613@ull.edu.es
 // VERSION: 2.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 4
@@ -40,6 +40,7 @@ class SllPolynomial : public sll_t<pair_double_t> {
   double Eval(const double) const;
   bool IsEqual(const SllPolynomial&, const double = EPS) const;
   void Sum(const SllPolynomial&, SllPolynomial&, const double = EPS);
+  void clean(const double element);
 };
 
 
@@ -151,8 +152,8 @@ void SllPolynomial::Sum(const SllPolynomial& sllpol, SllPolynomial& sllpolsum, c
       coefficient1 = node1->get_data().get_val();
       index2 = node2->get_data().get_inx();
       coefficient2 = node2->get_data().get_val();
-      if(index1 < index2){
-        for(int i{index1}; i < index2; ++i){
+      if(index1 < index2){      // Un monomio es mas pequeño que otro en la misma posicion
+        for(int i{index1}; i < index2; i++){  // Avanzo 
           SllPolyNode* node_aux = new sll_node_t<pair_double_t>(node1->get_data());    
           aux.push_front(node_aux);
           node1 = node1->get_next();
@@ -193,5 +194,30 @@ void SllPolynomial::Sum(const SllPolynomial& sllpol, SllPolynomial& sllpolsum, c
   }
 }
 
+// Este metodo borra todos los monomios cuyo coeficientes sean inferiores a element
+void SllPolynomial::clean(const double element){
+  if(this->get_head() != NULL){
+    int index_next;
+    double coefficient_next;
+    sll_node_t<pair_double_t>* aux = (this->get_head());
+    while(aux->get_data().get_val() < element){
+      this->pop_front();
+      aux = this->get_head();
+      if( aux == nullptr)
+        return;
+    }
+    // En este punto sabemos que el nodo cumple la condicion 
+      while(aux->get_next() != nullptr){
+        index_next = aux->get_next()->get_data().get_inx();
+        coefficient_next = aux->get_next()->get_data().get_val();
+        if(coefficient_next < element){
+          this->erase_after(aux);
+        }
+        aux = aux->get_next();
+
+        //std::cout << std::endl << "bucle" << std::endl;
+      }
+  }
+}
 
 #endif  // SLLPOLYNOMIAL_H_

@@ -54,7 +54,7 @@
           secret_key_(secret_key),
           public_key_(ExponentiationFast(prime_, secret_key_, base_)) {}
   
-        int ExponentiationFast(int module, int exponent, int base){
+        long long ExponentiationFast(int module, int exponent, int base){
           std::bitset<8> bin_exponent = DecimalToBinary(exponent);
           std::cout << std::endl << std::endl << "---------------------------------------------------------" << std::endl;
           std::cout << "bin exponent: " << bin_exponent <<std::endl;
@@ -95,13 +95,30 @@
         int CheckPublicKey(int another_key){
           return ExponentiationFast(prime_, secret_key_, another_key);
         }
-  };
+      };
+        bool isPrime(int n) {
+            if (n < 2) return false;
+            if (n == 2 || n == 3) return true;
+            if (n % 2 == 0 || n % 3 == 0) return false;
+
+            for (int i = 5; i * i <= n; i += 6) {
+                if (n % i == 0 || n % (i + 2) == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
   
   int main(){
       int prime_b, base_b, secret_key_Bob;
       std::cout << "Hi, Im Bob and this is the number prime and the base that I acorded with Alice:" << std::endl;
       std::cout << "number prime = ";
       std::cin >> prime_b;
+      while(!isPrime(prime_b)){
+        std::cin >> prime_b;
+      }
       std::cout << "base = ";
       std::cin >> base_b;
       std::cout << "And now this is my secret key, but be caution...It is a secret ->";

@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Santiago López Cerro
+// FECHA: 02/04/2025
+// EMAIL: alu0101763613@ull.edu.es
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 4
@@ -75,6 +75,10 @@ int main()
   cout << "sllp1 + sllp2= " << sllpsum12;
   sllp2.Sum(sllp3, sllpsum23);
   cout << "sllp2 + sllp3= " << sllpsum23;
+
+  cout << "Before clean: " << sllp1;
+  sllp1.clean(5);
+  cout << "Clean: " << sllp1;
 
   return 0;
 }
