@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+25e3bb5743910f7b8a62be79af07508a CMakeFiles/productor_consumidor_base_autogen
