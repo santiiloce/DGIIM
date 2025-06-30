@@ -11,7 +11,7 @@ void Reader::run() {
         // Lee un elemento y obten un pair con el elemento leido y la posición del front
         std::tie(num, front) = buffer->read(readerId);  // Desestructuramos el pair devuelto por la función
 
-        if (problem == 1)   //Caso consumidor 1: moda
+        if (problem == 1)   //Problem 1 --> moda
         {
             frequencies.clear();
             for (int j = 0; j < my_vect.size(); j++) {
@@ -42,7 +42,7 @@ void Reader::run() {
                 frequencies.erase(frequencies.begin() + pos);
             }
         }
-        else if(problem == 2) {  //Consumidor 2: desviacion tipica actualizada
+        else if(problem == 2) {  // Problem 2 --> desviacion tipica
             for (int j = 0; j < my_vect.size(); j++) { sum = sum + my_vect[j]; }
             media = sum/my_vect.size();
             sum = 0;
@@ -52,7 +52,7 @@ void Reader::run() {
             }
             desv = std::sqrt(sum/my_vect.size()-1);
         }
-        else {  //Caso 3: Sumatoria
+        else {  // Problem 3 --> Sumatoria
             int sum = 0;
             for (int element : my_vect) {
                 sum += element;
@@ -64,5 +64,6 @@ void Reader::run() {
         QThread::msleep(266); // Caso 1
         // QThread::msleep((200)); // Caso 2
     }
+
     qDebug() << "-----Se terminó de leer reader " << readerId << "-----";
 }

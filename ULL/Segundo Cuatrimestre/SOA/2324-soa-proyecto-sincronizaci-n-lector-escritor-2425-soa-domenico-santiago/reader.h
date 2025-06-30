@@ -19,7 +19,6 @@ protected:
     void run() override;
 
 private:
-
     std::vector <int> my_vect;
     std::vector <int> sec_vect;
     std::vector <std::pair <int, int>> frequencies;
