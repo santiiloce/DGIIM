@@ -29,4 +29,5 @@ private:
     QWaitCondition canRead, canWrite; // Condiciones para controlar la lectura y escritura
 };
 
+
 #endif // BUFFER_H

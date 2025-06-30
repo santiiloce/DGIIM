@@ -35,6 +35,7 @@ std::pair<int, int> Buffer::read(int readerId) { // Asume que ahora pasas un ID 
     }
 
     --activeReaders;
+
     if (activeReaders == 0) {
         canRead.wakeAll(); // Despierta a los lectores restantes si aún no han leído el elemento actual.
     }
