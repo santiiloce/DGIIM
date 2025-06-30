@@ -19,4 +19,5 @@ private:
     int writerId;
 };
 
+
 #endif // WRITER_H

@@ -20,6 +20,7 @@ void Writer::run() {
         QThread::msleep(200); // Caso 1
        // QThread::msleep((266)); // Caso 2
     }
+
     qDebug() << "-----Se terminó de escribir writing " << writerId << "-----";
 
 }
