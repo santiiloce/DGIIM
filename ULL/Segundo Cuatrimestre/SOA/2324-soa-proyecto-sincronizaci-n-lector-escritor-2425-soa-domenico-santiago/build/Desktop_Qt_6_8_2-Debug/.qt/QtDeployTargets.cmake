@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_lector_escritor_base_FILE /home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/lector_escritor_base)
+set(__QT_DEPLOY_TARGET_lector_escritor_base_TYPE EXECUTABLE)

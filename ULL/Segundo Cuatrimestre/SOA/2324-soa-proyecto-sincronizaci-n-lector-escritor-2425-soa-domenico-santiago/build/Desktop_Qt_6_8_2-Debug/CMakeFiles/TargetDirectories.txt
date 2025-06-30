@@ -1,0 +1,8 @@
+/home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/CMakeFiles/lector_escritor_base.dir
+/home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/CMakeFiles/edit_cache.dir
+/home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/CMakeFiles/rebuild_cache.dir
+/home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/CMakeFiles/list_install_components.dir
+/home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/CMakeFiles/install.dir
+/home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/CMakeFiles/install/local.dir
+/home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/CMakeFiles/install/strip.dir
+/home/santi/Escritorio/DGIIM/DGIIM/ULL/Segundo Cuatrimestre/SOA/lector-clara/build/Desktop_Qt_6_8_2-Debug/CMakeFiles/lector_escritor_base_autogen.dir
