@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+9a44c3e0f77229009ff2df019987ab90 CMakeFiles/lector_escritor_base_autogen
