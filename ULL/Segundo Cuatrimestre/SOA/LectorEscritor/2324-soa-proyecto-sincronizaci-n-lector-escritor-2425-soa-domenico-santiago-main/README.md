@@ -34,7 +34,7 @@ El proyecto contiene varios `TODO` que deben ser completados. Por cada `TODO` en
 ## Información Complementaria
 
 - La definición detallada del problema del lector-escritor y los detalles adicionales sobre el proyecto están disponibles en el campus virtual.
-- Este proyecto se enfoca en la resolución del problema del lector-escritor utilizando específicamente la estructura de datos de un ring buffer para la sincronización entre hilos.
+- Este proyecto se enfoca en la resolución del problema del lector-escritor utilizando específicamente la estructura de datos de un ring buffer para la sincronización entre hilos
 
 ## Reglas de Colaboración
 
